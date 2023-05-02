@@ -5,7 +5,10 @@ export const Home = () => {
   return (
     <>
       <Navbar></Navbar>
-      <h1>The Zoo!</h1>
+      <div>
+        <h1>The Zoo!</h1>
+        <p>Hello and välkommen to the djurpark</p>
+      </div>
     </>
   );
 };
