@@ -3,28 +3,36 @@ import { Navbar } from '../../components/Navbar/NavBar';
 import './Animals.scss';
 import { getAnimalsFromApi } from '../../services/getAnimalsFromApi';
 import { IAnimal } from '../../models/IAnimal';
+import { Link } from 'react-router-dom';
+import { ViewAnimal } from '../../components/ViewAnimal/ViewAnimal';
+import { getAnimalsFronLS } from '../../helpers/getAnimalsFromLS';
 
 export const Animals = () => {
   const [animals, setAnimals] = useState<IAnimal[]>([]);
+  const animalsFromLS = getAnimalsFronLS();
 
   useEffect(() => {
-    getAnimalsFromApi().then((res) => {
-      setAnimals(res);
-    });
+    if (!animalsFromLS.length) {
+      console.log(animalsFromLS.length);
+      getAnimalsFromApi().then((res) => {
+        setAnimals(res);
+        localStorage.setItem('animals', JSON.stringify([...animals]) || '[]');
+      });
+    } else {
+      setAnimals(animalsFromLS);
+    }
   }, []);
-  console.log(animals);
-
-  let animalsHtml: JSX.Element[] = [<></>];
-  animalsHtml = animals.map((a, i) => (
-    <div key={i}>
-      <h3>{a.name}</h3>
-    </div>
-  ));
 
   return (
     <>
       <Navbar></Navbar>
-      {animalsHtml}
+      <main className='content'>
+        {animals.map((animal, index) => (
+          <Link key={index} to={animal.id.toString()}>
+            <ViewAnimal {...animal}></ViewAnimal>
+          </Link>
+        ))}
+      </main>
     </>
   );
 };
