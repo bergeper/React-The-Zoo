@@ -4,7 +4,8 @@ import './index.scss';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Home } from './pages/Home/Home';
 import { Animals } from './pages/Animals/Animals';
-import { ViewAnimal } from './pages/ViewAnimals/ViewAnimal';
+import { DisplayAnimal } from './pages/DisplayAnimal/DisplayAnimal';
+import { Error } from './pages/Error/Error';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Home></Home>,
+    errorElement: <Error></Error>,
   },
   {
     path: '/animals',
@@ -21,7 +23,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/animals/:id',
-    element: <ViewAnimal></ViewAnimal>,
+    element: <DisplayAnimal></DisplayAnimal>,
   },
 ]);
 
