@@ -1,0 +1,11 @@
+.animals {
+  &__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+  }
+  &__desc {
+    background-color: rgba(0, 128, 0, 0.436);
+  }
+}
