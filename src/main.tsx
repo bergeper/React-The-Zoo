@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.scss';
+import './main.scss';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import { Home } from './pages/Home/Home';
-import { Animals } from './pages/Animals/Animals';
-import { DisplayAnimal } from './pages/DisplayAnimal/DisplayAnimal';
-import { Error } from './pages/Error/Error';
+import { Home } from './pages/Home';
+import { Animals } from './pages/Animals';
+import { DisplayAnimal } from './pages/DisplayAnimal';
+import { Error } from './pages/Error';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
