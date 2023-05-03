@@ -6,6 +6,7 @@ export interface IAnimal {
   yearOfBirth: number;
   shortDescription: string;
   longDescription: string;
+  medicine: string;
   isFed: boolean;
-  lastFed: String;
+  lastFed: string;
 }
