@@ -6,7 +6,9 @@ export const ViewAnimal = (animal: IAnimal) => {
     <>
       <article key={animal.id} className='animals'>
         <h3 className='animals__name'>{animal.name}</h3>
-        <img src={animal.imageUrl} className='animals__img'></img>
+        <div className='animals__imgContainer'>
+          <img src={animal.imageUrl} className='animals__img'></img>
+        </div>
         <p className='animals__desc'>{animal.shortDescription}</p>
       </article>
     </>

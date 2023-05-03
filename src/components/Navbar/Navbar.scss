@@ -1,0 +1,22 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: rgba(45, 156, 45, 0.635);
+  &__title {
+    padding: 10px;
+  }
+  &__menu {
+    display: flex;
+    padding: 10px;
+    &--link {
+      padding: 10px;
+      color: black;
+      list-style-type: none;
+      text-decoration: none;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
