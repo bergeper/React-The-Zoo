@@ -35,24 +35,22 @@ export const DisplayAnimal = () => {
 
   return (
     <>
-      <section className='animal'>
-        {animal ? (
-          <>
-            <ViewAnimal {...animal} fullDesc={true}></ViewAnimal>
-            <p>Senast matad: {animal?.lastFed}</p>
-            <button
-              onClick={() => {
-                feed();
-              }}
-              disabled={animal?.isFed === true}
-            >
-              Mata
-            </button>
-          </>
-        ) : (
-          <Error></Error>
-        )}
-      </section>
+      {animal ? (
+        <>
+          <ViewAnimal {...animal} fullDesc={true}></ViewAnimal>
+          <p>Senast matad: {animal?.lastFed}</p>
+          <button
+            onClick={() => {
+              feed();
+            }}
+            disabled={animal?.isFed === true}
+          >
+            Mata
+          </button>
+        </>
+      ) : (
+        <Error></Error>
+      )}
     </>
   );
 };
