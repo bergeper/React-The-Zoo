@@ -49,16 +49,23 @@ export const ViewAnimal = ({
   } else {
     return (
       <>
-        <article className={`animals ${isFed ? 'fed' : ''}`}>
-          <h3 className='animals__name'>{name}</h3>
-          <div className='animals__imgContainer'>
-            <img
-              src={imageUrl}
-              className='animals__img'
-              onError={imageError}
-            ></img>
+        <article className={`animal ${isFed ? 'fed' : ''}`}>
+          <h3 className='animal__name'>{name}</h3>
+          <div className='animal__infoContainer'>
+            <div className='animal__imgContainer'>
+              <img
+                src={imageUrl}
+                className='animal__img'
+                onError={imageError}
+              ></img>
+            </div>
+            <div className='animal__info'>
+              <p>Latinska namnet: {latinName}</p>
+              <p>Född: {yearOfBirth}</p>
+              <p>Medicin: {medicine}</p>
+            </div>
           </div>
-          <p className='animals__desc'>{longDescription}</p>
+          <p className='animal__desc'>{longDescription}</p>
         </article>
       </>
     );
