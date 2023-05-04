@@ -26,11 +26,11 @@ export const Animals = () => {
 
   return (
     <>
-      {animals.map((animal, index) => (
-        <section className='animal--container' key={animal.id}>
-          <ViewAnimal {...animal} fullDesc={false}></ViewAnimal>
-        </section>
-      ))}
+      <section className='content'>
+        {animals.map((animal, index) => (
+          <ViewAnimal key={animal.id} {...animal} fullDesc={false}></ViewAnimal>
+        ))}
+      </section>
     </>
   );
 };
