@@ -1,5 +1,6 @@
-.animal--container {
-  width: 45%;
-  text-decoration: none;
-  color: black;
+.content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }

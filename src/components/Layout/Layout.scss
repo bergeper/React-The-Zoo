@@ -1,7 +1,8 @@
 .container {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   width: 100%;
   min-height: 100vh;
   background-color: rgba(141, 213, 141, 0.614);

@@ -1,13 +1,14 @@
+@use '../../styles/breakpoints' as mix;
+
 .animals {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(69, 172, 68, 0.399);
-  padding: 20px;
+  background-color: rgba(172, 68, 68, 0.399);
+  padding: 5px;
   margin: 10px;
-  height: 400px;
+  width: 90%;
   border-radius: 20px;
-
   &__imgContainer {
     width: 100%;
     height: auto;
@@ -16,12 +17,86 @@
     align-items: center;
   }
   &__img {
-    height: 200px;
-    max-width: 350px;
+    max-height: 180px;
     border-radius: 20px;
+  }
+  &__desc {
+    padding: 5px;
+  }
+  @include mix.tablet {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 10px;
+    width: 33%;
+    &__imgContainer {
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &__img {
+      max-height: 180px;
+    }
+  }
+}
+
+.animal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(172, 68, 68, 0.399);
+  padding: 20px;
+  margin: 10px;
+  width: 100%;
+  border-radius: 20px;
+  &__infoContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__imgContainer {
+    padding: 5px;
+    width: 100%;
+    height: auto;
+  }
+  &__img {
+    width: 100%;
+    border-radius: 20px;
+  }
+  &__info {
+    padding: 5px;
+    width: 100%;
+  }
+  @include mix.tablet {
+    flex-direction: row;
+    background-color: rgba(172, 68, 68, 0.399);
+    padding: 20px;
+    margin: 10px;
+    width: 100%;
+    border-radius: 20px;
+    &__infoContainer {
+      flex-direction: row;
+    }
+
+    &__imgContainer {
+      padding: 5px;
+      width: 50%;
+      height: auto;
+    }
+    &__img {
+      width: 100%;
+      border-radius: 20px;
+    }
+    &__info {
+      padding: 5px;
+      width: 50%;
+    }
   }
 }
 
 .fed {
-  background-color: yellow;
+  background-color: rgba(0, 255, 13, 0.347);
 }
