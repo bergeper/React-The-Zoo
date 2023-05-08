@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
   background-color: rgba(172, 68, 68, 0.399);
   padding: 5px;
   margin: 10px;
@@ -19,9 +20,36 @@
   &__img {
     max-height: 180px;
     border-radius: 20px;
+    &--text {
+      text-align: center;
+      position: absolute;
+      font-size: 1rem;
+      font-weight: bolder;
+      color: rgb(255, 255, 255);
+      background-color: black;
+      border-radius: 15px;
+      top: 230px;
+      //transform: translate(-50%, -50%);
+      padding: 5px;
+    }
   }
   &__desc {
     padding: 5px;
+  }
+  &__btn {
+    background-color: white;
+    padding: 10px;
+    border-radius: 15px;
+    &:hover {
+      cursor: pointer;
+    }
+    &:active {
+      background-color: black;
+      color: white;
+    }
+    &--fed {
+      background-color: rgba(255, 0, 0, 0.527);
+    }
   }
   @include mix.tablet {
     display: flex;
@@ -47,10 +75,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   background-color: rgba(172, 68, 68, 0.399);
-  padding: 20px;
-  margin: 10px;
-  width: 100%;
+  padding: 10px;
+  margin: 5px;
+  width: 90%;
   border-radius: 20px;
   &__infoContainer {
     display: flex;
@@ -58,7 +87,6 @@
   }
 
   &__imgContainer {
-    padding: 5px;
     width: 100%;
     height: auto;
   }
@@ -67,15 +95,19 @@
     border-radius: 20px;
   }
   &__info {
-    padding: 5px;
-    width: 100%;
+    margin: 6px;
+    padding-left: 10px;
+    width: auto;
+    border: 3px solid black;
+    border-radius: 20px;
   }
   @include mix.tablet {
-    flex-direction: row;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    width: 60%;
     background-color: rgba(172, 68, 68, 0.399);
     padding: 20px;
-    margin: 10px;
-    width: 100%;
     border-radius: 20px;
     &__infoContainer {
       flex-direction: row;
@@ -91,8 +123,9 @@
       border-radius: 20px;
     }
     &__info {
-      padding: 5px;
+      padding-left: 20px;
       width: 50%;
+      height: auto;
     }
   }
 }
