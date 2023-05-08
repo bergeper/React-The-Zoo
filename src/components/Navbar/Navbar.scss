@@ -2,21 +2,45 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: rgba(45, 156, 45, 0.635);
-  &__title {
-    padding: 10px;
+  background-color: #169d0fac;
+  &__home {
+    text-decoration: none;
+    color: rgb(6, 6, 6);
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    margin: 20px;
+    padding: 2px 5px 2px 5px;
+    background-color: rgb(236, 236, 236);
+    &:hover {
+      cursor: pointer;
+      background-color: #ee6123;
+    }
+    &--logo {
+      font-size: 2rem;
+    }
+    &--title {
+      padding-left: 5px;
+    }
   }
   &__menu {
     display: flex;
     padding: 10px;
-    &--link {
-      padding: 10px;
-      color: black;
+    &--item {
       list-style-type: none;
+      padding: 10px;
+      color: rgb(0, 0, 0);
+      background-color: white;
+      border-radius: 20px;
       text-decoration: none;
       &:hover {
         cursor: pointer;
+        background-color: #ee6123;
       }
+    }
+    &--link {
+      text-decoration: none;
+      padding: 5px;
     }
   }
 }
