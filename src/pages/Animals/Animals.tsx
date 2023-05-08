@@ -31,8 +31,14 @@ export const Animals = () => {
 
   return (
     <>
-      <h2>Några av djuren är hungriga!</h2>
-      <p>Du behöver mata: {hungryAnimals.toString()} djur</p>
+      {hungryAnimals === 0 ? (
+        <h2>Alla djuren är mätta!</h2>
+      ) : (
+        <>
+          <h2>Några av djuren är hungriga!</h2>
+          <p>Du behöver mata: {hungryAnimals.toString()} djur</p>
+        </>
+      )}
       <h3 className='content__title'>
         Välj ett djur genom att klicka på bilden
       </h3>
