@@ -56,7 +56,6 @@ export const DisplayAnimal = () => {
             >
               Mata
             </button>
-            <i className='fa-solid fa-salad'></i>
           </article>
         </>
       ) : (
