@@ -34,22 +34,19 @@ export const ViewAnimal = ({
         <article className={`animals ${isFed ? 'fed' : ''}`}>
           <h3 className='animals__name'>{name}</h3>
           <div className='animals__imgContainer'>
-            <img
-              src={imageUrl}
-              className='animals__img'
-              onError={imageError}
-              alt={`Picture of animal ${name} who is a ${latinName}`}
-            ></img>
-          </div>
-          <div className='animals__img--text'>
-            {isFed ? 'Jag är mätt!' : `Jag är hungrig!`}
-            <div className='circle3'></div>
-            <div className='circle4'></div>
+            <Link to={id.toString()}>
+              <img
+                src={imageUrl}
+                className='animals__img'
+                onError={imageError}
+                alt={`Picture of animal ${name} who is a ${latinName}`}
+              ></img>
+            </Link>
+            <div className='animals__img--text'>
+              {isFed ? 'Jag är mätt!' : `Jag är hungrig!`}
+            </div>
           </div>
           <p className='animals__desc'>{shortDescription}</p>
-          <Link to={id.toString()}>
-            <button className='animals__btn'>Feed me, please!</button>
-          </Link>
         </article>
       </>
     );
