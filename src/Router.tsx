@@ -14,6 +14,7 @@ export const router = createBrowserRouter([
         path: '/',
         element: <Home></Home>,
         errorElement: <Error></Error>,
+        index: true,
       },
       {
         path: '/animals',
