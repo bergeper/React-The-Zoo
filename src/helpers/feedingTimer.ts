@@ -6,8 +6,7 @@ export const feedingTimer = (animals: IAnimal[]) => {
 
   animals.map((ani) => {
     const lastFed = Date.parse(ani.lastFed);
-    if (getTime - lastFed > 10000) {
-      // 14400000
+    if (getTime - lastFed > 14400000) {
       ani.isFed = false;
       saveAnimalsToLS(animals);
     }
