@@ -1,6 +1,22 @@
-import { Navbar } from '../../components/Navbar/NavBar';
+import { useEffect, useState } from 'react';
+import './Home.scss';
+import { feedAnimals } from '../../helpers/feedAnimals';
+import { getAnimalsFromLS } from '../../helpers/getAnimalsFromLS';
+import { Link } from 'react-router-dom';
 
 export const Home = () => {
+  const [hungryAnimals, setHungryAnimals] = useState(0);
+  const animalsFromLS = getAnimalsFromLS();
+
+  useEffect(() => {
+    if (animalsFromLS.length === 0) {
+      setHungryAnimals(15);
+    } else {
+      let hungry = feedAnimals(animalsFromLS);
+      setHungryAnimals(hungry);
+    }
+  }, []);
+
   return (
     <>
       <article className='hero'>
@@ -11,9 +27,12 @@ export const Home = () => {
           exercitationem suscipit, maxime aliquam veniam accusantium laudantium
           aut doloribus, eius rem.
         </p>
-      </article>
-      <article>
-        <h3>Dagens djur!</h3>
+
+        <h3>Du behöver mata: {hungryAnimals.toString()} djur</h3>
+
+        <Link to='/animals'>
+          <button>Till djuren!</button>
+        </Link>
       </article>
     </>
   );
