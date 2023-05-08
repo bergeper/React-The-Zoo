@@ -38,15 +38,18 @@ export const DisplayAnimal = () => {
       {animal ? (
         <>
           <ViewAnimal {...animal} fullDesc={true}></ViewAnimal>
-          <p>Senast matad: {animal?.lastFed}</p>
-          <button
-            onClick={() => {
-              feed();
-            }}
-            disabled={animal?.isFed === true}
-          >
-            Mata
-          </button>
+          <article className='feed'>
+            <p className='feed__lastFed'>Senast matad: {animal?.lastFed}</p>
+            <button
+              className={`feed__btn ${animal.isFed ? 'feed__btn--fed' : ''}`}
+              onClick={() => {
+                feed();
+              }}
+              disabled={animal?.isFed === true}
+            >
+              Mata
+            </button>
+          </article>
         </>
       ) : (
         <Error></Error>
