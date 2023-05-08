@@ -6,9 +6,11 @@ import { ViewAnimal } from '../../components/ViewAnimal/ViewAnimal';
 import { getAnimalsFromLS } from '../../helpers/getAnimalsFromLS';
 import { saveAnimalsToLS } from '../../helpers/saveAnimalsToLS';
 import { feedingTimer } from '../../helpers/feedingTimer';
+import { feedAnimals } from '../../helpers/feedAnimals';
 
 export const Animals = () => {
   const [animals, setAnimals] = useState<IAnimal[]>([]);
+  const [hungryAnimals, setHungryAnimals] = useState(0);
   const animalsFromLS = getAnimalsFromLS();
 
   useEffect(() => {
@@ -17,8 +19,11 @@ export const Animals = () => {
         setAnimals(res);
         saveAnimalsToLS(res);
       });
+      setHungryAnimals(15);
     } else {
       setAnimals(animalsFromLS);
+      let hungry = feedAnimals(animalsFromLS);
+      setHungryAnimals(hungry);
     }
   }, []);
 
@@ -26,6 +31,11 @@ export const Animals = () => {
 
   return (
     <>
+      <h2>Några av djuren är hungriga!</h2>
+      <p>Du behöver mata: {hungryAnimals.toString()} djur</p>
+      <h3 className='content__title'>
+        Välj ett djur genom att klicka på bilden
+      </h3>
       <section className='content'>
         {animals.map((animal, index) => (
           <ViewAnimal key={animal.id} {...animal} fullDesc={false}></ViewAnimal>
