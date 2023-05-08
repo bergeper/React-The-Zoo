@@ -39,7 +39,14 @@ export const DisplayAnimal = () => {
         <>
           <ViewAnimal {...animal} fullDesc={true}></ViewAnimal>
           <article className='feed'>
-            <p className='feed__lastFed'>Senast matad: {animal?.lastFed}</p>
+            <p className='feed__lastFed'>
+              Senast matad:{' '}
+              {animal.isFed
+                ? animal?.lastFed
+                : animal?.lastFed.substring(0, 10) +
+                  ' ' +
+                  animal.lastFed.substring(11, 19)}
+            </p>
             <button
               className={`feed__btn ${animal.isFed ? 'feed__btn--fed' : ''}`}
               onClick={() => {
@@ -49,6 +56,7 @@ export const DisplayAnimal = () => {
             >
               Mata
             </button>
+            <i className='fa-solid fa-salad'></i>
           </article>
         </>
       ) : (
