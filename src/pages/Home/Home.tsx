@@ -27,12 +27,17 @@ export const Home = () => {
           exercitationem suscipit, maxime aliquam veniam accusantium laudantium
           aut doloribus, eius rem.
         </p>
+        {hungryAnimals === 0 ? (
+          <h3>Alla djur är mätta!</h3>
+        ) : (
+          <>
+            <h3>Du behöver mata: {hungryAnimals.toString()} djur</h3>
 
-        <h3>Du behöver mata: {hungryAnimals.toString()} djur</h3>
-
-        <Link to='/animals'>
-          <button>Till djuren!</button>
-        </Link>
+            <Link to='/animals'>
+              <button className='hero__btn'>Till djuren!</button>
+            </Link>
+          </>
+        )}
       </article>
     </>
   );
